@@ -11,7 +11,6 @@ export function callAllFunctions(res: Response) {
   res.json()
   res.jsonp()
   res.sendFile('test')
-  res.sendfile('test')
   res.download('test')
   res.contentType('test')
   res.type('test')
@@ -47,12 +46,12 @@ export function callAllFunctions(res: Response) {
   res.flushHeaders()
 
   /* stream.Writable */
-  res._write({}, 'utf-8', vi.fn())
+  res._write({}, 'base64', vi.fn())
   res._writev && res._writev([], vi.fn())
   res._destroy(null, vi.fn())
   res._final(vi.fn())
   res.write({}, vi.fn())
-  res.setDefaultEncoding('utf-8')
+  res.setDefaultEncoding('base64')
   res.end()
   res.cork()
   res.uncork()
