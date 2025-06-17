@@ -71,7 +71,7 @@ describe('response - Defaults for "stream.Writable" (accepts no arguments and re
     const { res } = getMockRes()
 
     // it does not return itself (is not chainable)
-    expect(res._write({}, 'base64', jest.fn())).toBeUndefined()
+    expect(res._write({}, 'base64', vi.fn())).toBeUndefined()
   })
 
   test('res._writev is a mocked function', () => {
